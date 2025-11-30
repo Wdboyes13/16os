@@ -1,15 +1,12 @@
 PROGS := ls echo shutdown hello clear help
+CORE  := boot os syscall
 
 PRG := $(patsubst %,obj/%,$(PROGS))
-COR := obj/boot obj/os obj/syscall
+COR := $(patsubst %,obj/%,$(CORE))
 O := $(COR) $(PRG)
 F := obj obj/cpy $(O) os.img
 
 all: $(F)
-
-obj/boot: src/boot.s
-obj/os: src/os.s
-obj/syscall: src/syscall.s
 
 obj/cpy: src/cpy.c
 	@echo "[C] $(shell basename $@)"
