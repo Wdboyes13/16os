@@ -7,22 +7,18 @@ F := obj obj/cpy $(O) os.img
 
 all: $(F)
 
-# Core files (explicit dependencies if they include files)
 obj/boot: src/boot.s
 obj/os: src/os.s
 obj/syscall: src/syscall.s
 
-# Copy utility
 obj/cpy: src/cpy.c
 	@echo "[C] $(shell basename $@)"
 	@clang src/cpy.c -o obj/cpy
 
-# Pattern rule for all assembly programs
 obj/%: src/%.s
 	@echo "[S] $(shell basename $@)"
 	@nasm -f bin -I src $< -o $@
 
-# OS image
 os.img: $(O)
 	@echo "[DD] $@"
 	@dd if=/dev/zero of=os.img bs=512 count=2880 >/dev/null 2>&1
