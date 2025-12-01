@@ -30,8 +30,8 @@ clean:
 	@echo "[RM] $(F)"
 	@rm -rf $(F) filetable
 
-run: obj os.img
-	@echo "[QEMU] $<"
-	@qemu-system-i386 -M pc -m 16M $<
+run: $(F)
+	@echo "[QEMU] os.img"
+	@qemu-system-i386 -M pc -m 16M os.img
 
 .PHONY: all clean run
