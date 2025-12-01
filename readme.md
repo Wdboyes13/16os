@@ -2,7 +2,6 @@
 # Made for 16bit mode i386
 
 > [!CAUTION]
-> Testing & Hardware Warning  
 > This operating system is currently **only tested under QEMU emulation**. It has **NOT been verified on real physical hardware**.  
 > **WE STRONGLY ADVISE AGAINST ATTEMPTING TO RUN THIS SOFTWARE ON REAL HARDWARE.** Doing so may result in:  
 > - System instability or crashes
