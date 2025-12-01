@@ -1,7 +1,10 @@
 Just another OS
 
 Made for 16bit mode i386
-Just do `make run` to run it
+Just do `make run` to run it  
+
+Only tested on QEMU, not on real hardware  
+
 
 Based on https://github.com/appusajeev/os-dev-16/
 Some code is from there too
@@ -20,4 +23,4 @@ You'll need these things installed
 - rm
 - clang (if you use another C Compiler edit the "C" variable in the makefile)
 
-In the OS run `help` to see commands help
+In the OS run `help` to see commands help  
